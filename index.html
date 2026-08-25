@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvel Comics Historical Tree</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1>MARVEL Comics Historical Tree</h1>
+        <p class="subtitle">Interactive genealogy / knowledge graph</p>
+      </div>
+
+      <div class="controls-inline">
+        <div class="filters">
+          <label>
+            Era
+            <select id="eraFilter"><option value="">All eras</option></select>
+          </label>
+          <label>
+            Universe
+            <select id="universeFilter"><option value="">All universes</option></select>
+          </label>
+          <label>
+            Superhero
+            <select id="heroFilter"><option value="">All superheroes</option></select>
+          </label>
+          <button id="resetFilters" class="btn">Reset</button>
+        </div>
+
+        <button id="themeToggle" class="btn">🌙 Dark</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="sheetWarning" class="warning hidden"></div>
+      <div id="sheetError" class="error hidden"></div>
+
+      <section id="mapViewport" aria-label="Interactive map viewport">
+        <div id="mapSurface">
+          <svg id="edgeLayer" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div id="nodeLayer"></div>
+        </div>
+      </section>
+
+      <aside class="zoom-panel" aria-label="Zoom controls">
+        <button id="zoomIn" class="btn">+</button>
+        <div id="zoomPct">100%</div>
+        <button id="zoomOut" class="btn">−</button>
+        <button id="fitTree" class="btn">Fit Tree</button>
+        <button id="resetView" class="btn">Reset/Center</button>
+      </aside>
+    </main>
+
+    <dialog id="detailsModal" class="details-modal">
+      <button id="closeModal" class="modal-close">✕</button>
+      <div id="modalContent"></div>
+    </dialog>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
